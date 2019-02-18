@@ -1,7 +1,5 @@
 ﻿using System;
-/*
- * 
- */
+
 namespace Homework_Feb16
 {
 public static class Feb16
