@@ -98,22 +98,35 @@ public static class Feb16
             
             WaitForUSer();
         }
- 
+
         public static void TaskTwo()
         {
-            Console.Write("Please, input first number: ");
-            var firstNumber = Convert.ToDouble(Console.ReadLine()?.Replace('.', ','));
-            
-            Console.Write("Please, input second number: ");
-            var secondNumber = Convert.ToDouble(Console.ReadLine()?.Replace('.', ','));
-            
-            Console.Write("Please, input third number: ");
-            var thirdNumber = Convert.ToDouble(Console.ReadLine()?.Replace('.', ','));
+            bool flag = true;
 
-            Console.WriteLine("OK, let me input two gaps between these numbers: "+
-                              "{0}  {1}  {2}", firstNumber, secondNumber, thirdNumber);
-            
-            WaitForUSer();
+            while (flag)
+            {
+                Console.Write("Please, input first number: ");
+                if (double.TryParse(Console.ReadLine(), out var firstNumber))
+                {
+                    Console.Write("Please, input second number: ");
+                    if (double.TryParse(Console.ReadLine(), out var secondNumber))
+                    {
+                        Console.Write("Please, input third number: ");
+                        if (double.TryParse(Console.ReadLine(), out var thirdNumber))
+                        {
+                            Console.WriteLine("OK, let me input two gaps between these numbers: " +
+                                              "{0}  {1}  {2}", firstNumber, secondNumber, thirdNumber);
+
+                            flag = false;
+                            WaitForUSer();
+                        }
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Please, use only numbers!");
+                }
+            }
         }
  
         public static void TaskThree()
