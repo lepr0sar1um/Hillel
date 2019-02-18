@@ -102,13 +102,13 @@ public static class Feb16
         public static void TaskTwo()
         {
             Console.Write("Please, input first number: ");
-            var firstNumber = Convert.ToInt32(Console.ReadLine());
+            var firstNumber = Convert.ToDouble(Console.ReadLine()?.Replace('.', ','));
             
             Console.Write("Please, input second number: ");
-            var secondNumber = Convert.ToInt32(Console.ReadLine());
+            var secondNumber = Convert.ToDouble(Console.ReadLine()?.Replace('.', ','));
             
             Console.Write("Please, input third number: ");
-            var thirdNumber = Convert.ToInt32(Console.ReadLine());
+            var thirdNumber = Convert.ToDouble(Console.ReadLine()?.Replace('.', ','));
 
             Console.WriteLine("OK, let me input two gaps between these numbers: "+
                               "{0}  {1}  {2}", firstNumber, secondNumber, thirdNumber);
@@ -119,7 +119,7 @@ public static class Feb16
         public static void TaskThree()
         {
             Console.Write("Please, insert quantity in centimeters: ");
-            var centiMeters = Convert.ToInt32(Console.ReadLine());
+            var centiMeters = Convert.ToDouble(Console.ReadLine()?.Replace('.', ','));
            
             Console.WriteLine("Total meters in your number: " + (centiMeters / 100));
             
@@ -129,7 +129,7 @@ public static class Feb16
         public static void TaskFour()
         {
             Console.Write("Please, input the quantity of days: ");
-            var days = Convert.ToDouble(Console.ReadLine().Replace('.', ','));
+            var days = Convert.ToDouble(Console.ReadLine()?.Replace('.', ','));
             const int daysInAWeek = 7;
             Console.WriteLine("Full weeks = " + (days/daysInAWeek));
             
@@ -139,10 +139,10 @@ public static class Feb16
         public static void TaskFive()
         {
             Console.Write("Input first value: ");
-            var firstValue = Convert.ToDouble(Console.ReadLine().Replace('.', ','));
+            var firstValue = Convert.ToDouble(Console.ReadLine()?.Replace('.', ','));
            
             Console.Write("Input second value: ");
-            var secondValue = Convert.ToDouble(Console.ReadLine().Replace('.', ','));
+            var secondValue = Convert.ToDouble(Console.ReadLine()?.Replace('.', ','));
            
             Console.WriteLine("Average = " + (firstValue + secondValue)/2);
             
@@ -152,7 +152,7 @@ public static class Feb16
         public static void TaskSix()
         {
             Console.Write("Input your value: ");
-            var introducedValue = Convert.ToDouble(Console.ReadLine().Replace('.', ','));
+            var introducedValue = Convert.ToDouble(Console.ReadLine()?.Replace('.', ','));
            
             Console.WriteLine("The square root of the value entered = " + Math.Sqrt(introducedValue));
             
@@ -162,10 +162,10 @@ public static class Feb16
         public static void TaskSeven()
         {
             Console.Write("Please, input side A in mm: ");
-            var sideA = Convert.ToDouble(Console.ReadLine().Replace('.', ','));
+            var sideA = Convert.ToDouble(Console.ReadLine()?.Replace('.', ','));
             
             Console.Write("Please, input side B in mm: ");
-            var sideB = Convert.ToDouble(Console.ReadLine().Replace('.', ','));
+            var sideB = Convert.ToDouble(Console.ReadLine()?.Replace('.', ','));
            
             Console.WriteLine("The are {0} squares", sideA / sideB);
             
@@ -183,7 +183,7 @@ public static class Feb16
         public static void TaskTwoSecondPart()
         {
             Console.Write("Enter number: ");
-            var number = Convert.ToDouble(Console.ReadLine().Replace('.', ','));
+            var number = Convert.ToDouble(Console.ReadLine()?.Replace('.', ','));
             Console.WriteLine("You have entered {0}", number);
            
             WaitForUSer();
