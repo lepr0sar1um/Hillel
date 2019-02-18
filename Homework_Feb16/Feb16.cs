@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 
 namespace Homework_Feb16
 {
@@ -23,9 +24,8 @@ public static class Feb16
                     selector = Convert.ToInt32(Console.ReadLine());
                 }
                 catch (Exception e)
-                {
-                    Console.WriteLine("Please, use only numbers.\n" + e.Message);
-                    WaitForUSer();
+                {   
+                    ParseNumbersException();
                     continue;
                 }
                              
@@ -101,8 +101,7 @@ public static class Feb16
 
         public static void TaskTwo()
         {
-            bool flag = true;
-
+            var flag = true;
             while (flag)
             {
                 Console.Write("Please, input first number: ");
@@ -118,70 +117,136 @@ public static class Feb16
                                               "{0}  {1}  {2}", firstNumber, secondNumber, thirdNumber);
 
                             flag = false;
-                            WaitForUSer();
                         }
+                        else
+                        {
+                            ParseNumbersException();
+                        }
+                    }
+                    else
+                    {
+                        ParseNumbersException();
                     }
                 }
                 else
                 {
-                    Console.WriteLine("Please, use only numbers!");
+                    ParseNumbersException();
                 }
             }
+            WaitForUSer();
         }
  
         public static void TaskThree()
         {
-            Console.Write("Please, insert quantity in centimeters: ");
-            var centiMeters = Convert.ToDouble(Console.ReadLine()?.Replace('.', ','));
-           
-            Console.WriteLine("Total meters in your number: " + (centiMeters / 100));
-            
+            var flag = true;
+            while (flag)
+            {
+                Console.Write("Please, insert quantity in centimeters: ");
+                if (double.TryParse(Console.ReadLine(), out var centiMeters))
+                {
+                    flag = false;
+                    Console.WriteLine("Total meters in your number: " + (centiMeters / 100));
+                }
+                else
+                {
+                    ParseNumbersException();
+                }
+            }
             WaitForUSer();
         }
  
         public static void TaskFour()
         {
-            Console.Write("Please, input the quantity of days: ");
-            var days = Convert.ToDouble(Console.ReadLine()?.Replace('.', ','));
             const int daysInAWeek = 7;
-            Console.WriteLine("Full weeks = " + (days/daysInAWeek));
-            
+
+            var flag = true;
+            while (flag)
+            {
+                Console.Write("Please, input the quantity of days: ");
+                if (double.TryParse(Console.ReadLine(), out var days))
+                {
+                    flag = false;
+                    Console.WriteLine("Full weeks = " + (days/daysInAWeek));
+                }
+                else
+                {
+                    ParseNumbersException();
+                }
+            }
             WaitForUSer();
         }
- 
+
         public static void TaskFive()
         {
-            Console.Write("Input first value: ");
-            var firstValue = Convert.ToDouble(Console.ReadLine()?.Replace('.', ','));
-           
-            Console.Write("Input second value: ");
-            var secondValue = Convert.ToDouble(Console.ReadLine()?.Replace('.', ','));
-           
-            Console.WriteLine("Average = " + (firstValue + secondValue)/2);
-            
+            var flag = true;
+            while (flag)
+            {
+                Console.Write("Input first value: ");
+                if (double.TryParse(Console.ReadLine(), out var firstValue))
+                {
+                    Console.Write("Input second value: ");
+                    if (double.TryParse(Console.ReadLine(), out var secondValue))
+                    {
+                        flag = false;
+                        Console.WriteLine("Average = " + (firstValue + secondValue) / 2);
+
+                    }
+                    else
+                    {
+                        ParseNumbersException();
+                    }
+                }
+                else
+                {
+                    ParseNumbersException();
+                }
+            }
             WaitForUSer();
         }
- 
+
         public static void TaskSix()
         {
-            Console.Write("Input your value: ");
-            var introducedValue = Convert.ToDouble(Console.ReadLine()?.Replace('.', ','));
-           
-            Console.WriteLine("The square root of the value entered = " + Math.Sqrt(introducedValue));
-            
+            var flag = true;
+            while (flag)
+            {
+                Console.Write("Input your value: ");
+                if (double.TryParse(Console.ReadLine(), out var introducedValue))
+                {
+                    flag = false;
+                    Console.WriteLine("The square root of the value entered = " + Math.Sqrt(introducedValue));
+                }
+                else
+                {
+                    ParseNumbersException();
+                }
+            }
             WaitForUSer();
         }
  
         public static void TaskSeven()
         {
-            Console.Write("Please, input side A in mm: ");
-            var sideA = Convert.ToDouble(Console.ReadLine()?.Replace('.', ','));
-            
-            Console.Write("Please, input side B in mm: ");
-            var sideB = Convert.ToDouble(Console.ReadLine()?.Replace('.', ','));
-           
-            Console.WriteLine("The are {0} squares", sideA / sideB);
-            
+            var flag = true;
+            while (flag)
+            {
+                Console.Write("Please, input side A in mm: ");
+                if (double.TryParse(Console.ReadLine(), out var sideA))
+                {
+                    Console.Write("Please, input side B in mm: ");
+                    if (double.TryParse(Console.ReadLine(), out var sideB))
+                    {
+                        flag = false;
+                        Console.WriteLine("The are {0} squares", sideA / sideB);
+                    }
+                    else
+                    {
+                        ParseNumbersException();
+                    }
+                }
+                else
+                {
+                    ParseNumbersException();
+                }
+            }           
             WaitForUSer();
         }
  
@@ -195,10 +260,20 @@ public static class Feb16
  
         public static void TaskTwoSecondPart()
         {
-            Console.Write("Enter number: ");
-            var number = Convert.ToDouble(Console.ReadLine()?.Replace('.', ','));
-            Console.WriteLine("You have entered {0}", number);
-           
+            var flag = true;
+            while (flag)
+            {
+                Console.Write("Enter number: ");
+                if (double.TryParse(Console.ReadLine(), out var number))
+                {
+                    flag = false;
+                    Console.WriteLine("You have entered {0}", number);
+                }
+                else
+                {
+                    ParseNumbersException();
+                }
+            }
             WaitForUSer();
         }
  
@@ -206,6 +281,12 @@ public static class Feb16
         {
             Console.Write("Press any key to continue...");
             Console.ReadKey();
+        }
+
+        public static void ParseNumbersException()
+        {
+            Console.WriteLine("Please, use only numbers!");
+            WaitForUSer();
         }
 
         public static void ShowMenu()
