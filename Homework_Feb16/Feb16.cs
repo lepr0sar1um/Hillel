@@ -28,7 +28,7 @@ public static class Feb16
                               "8. Show system info\n" +
                               "9. Show value from console\n\n" +
                               "Please, select task number between 0 and 9.\n" +
-                              "Press -1 to exit: ");
+                              "Or -1 to exit: ");
                 int selector;
  
                 try
@@ -37,8 +37,7 @@ public static class Feb16
                 }
                 catch (Exception e)
                 {
-                    Console.WriteLine("Please, use only numbers.\n" +
-                                      e.Message);
+                    Console.WriteLine("Please, use only numbers.\n" + e.Message);
                     WaitForUSer();
                     continue;
                 }
@@ -102,14 +101,14 @@ public static class Feb16
            
             Console.WriteLine("Hi there! My name is {0} {1} {2}", firstName, secondName, lastName);
             Console.WriteLine("I am {0}, my phone number is {1}", myAge, myPhoneNumber);
- 
+            
             WaitForUSer();
         }
        
         public static void TaskOne()
         {
             Console.WriteLine("Pi = " + Math.PI);
-           
+            
             WaitForUSer();
         }
  
@@ -117,18 +116,18 @@ public static class Feb16
         {
             const int firstNumber = 7, secondNumber = 15, thirdNumber = 100;
             Console.WriteLine("{0}  {1}  {2}", firstNumber, secondNumber, thirdNumber);
-           
+            
             WaitForUSer();
         }
  
         public static void TaskThree()
         {
-            Console.WriteLine("Please, insert count in centimeters: ");
+            Console.Write("Please, insert count in centimeters: ");
             string cm = Console.ReadLine();
             int count = int.Parse(cm);
            
             Console.WriteLine("Total meters in your number: " + (count / 100));
-           
+            
             WaitForUSer();
         }
  
@@ -136,33 +135,31 @@ public static class Feb16
         {
             const int days = 234, daysInAWeek = 7;
             Console.WriteLine("Full weeks = " + (days/daysInAWeek));
-           
+            
             WaitForUSer();
         }
  
         public static void TaskFive()
         {
-            Console.WriteLine("Input first value: ");
-            string valeuOne = Console.ReadLine();
-            int firstValue = int.Parse(valeuOne);
+            Console.Write("Input first value: ");
+            var firstValue = Convert.ToDouble(Console.ReadLine().Replace('.', ','));
            
-            Console.WriteLine("Input second value: ");
-            string valueTwo = Console.ReadLine();
-            int secondValue = int.Parse(valueTwo);
+            Console.Write("Input second value: ");
+            var secondValue = Convert.ToDouble(Console.ReadLine().Replace('.', ','));
            
             Console.WriteLine("Average = " + (firstValue + secondValue)/2);
-           
+            
             WaitForUSer();
         }
  
         public static void TaskSix()
         {
-            Console.WriteLine("Input your value: ");
+            Console.Write("Input your value: ");
             string value = Console.ReadLine();
             int inputedValue = Int32.Parse(value);
            
             Console.WriteLine("The square root of the number entered = " + Math.Sqrt(inputedValue));
-           
+            
             WaitForUSer();
         }
  
@@ -171,7 +168,7 @@ public static class Feb16
             const int sideA = 543, sideB = 130;
            
             Console.WriteLine("The are {0} squares", sideA / sideB);
-           
+            
             WaitForUSer();
         }
  
@@ -179,22 +176,17 @@ public static class Feb16
         {
             Console.WriteLine("Machine name: {0}\nOS version: {1}\nUser name: {2}\nProcessor Count: {3}\n",
                 Environment.MachineName, Environment.OSVersion, Environment.UserName, Environment.ProcessorCount);
-           
+            
             WaitForUSer();
         }
  
         public static void TaskTwoSecondPart()
         {
-            Console.WriteLine("Enter number: ");
+            Console.Write("Enter number: ");
             string number = Console.ReadLine();
             Console.WriteLine("You have entered {0}", number);
            
             WaitForUSer();
-        }
-
-        public static void TaskSelector()
-        {
-            
         }
  
         public static void WaitForUSer()
