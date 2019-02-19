@@ -2,7 +2,7 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Homework_Feb16", "Homework_Feb16\Homework_Feb16.csproj", "{EE7FE9DE-6BA8-44C8-B89B-727041A76984}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Homework_Feb16_part2", "Homework_Feb16_part2\Homework_Feb16_part2.csproj", "{D282F3C5-A3A1-4A9D-BEAB-4070C2146351}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Homework_Feb16_Extended", "Homework_Feb16_Extended\Homework_Feb16_Extended.csproj", "{D282F3C5-A3A1-4A9D-BEAB-4070C2146351}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

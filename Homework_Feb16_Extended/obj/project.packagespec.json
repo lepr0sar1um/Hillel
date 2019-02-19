@@ -1,10 +1,10 @@
 ﻿{
   "version": "1.0.0",
   "restore": {
-    "projectUniqueName": "/home/ivaneremenko/RiderProjects/Hillel_Homework/Homework_Feb16_part2/Homework_Feb16_part2.csproj",
-    "projectName": "Homework_Feb16_part2",
-    "projectPath": "/home/ivaneremenko/RiderProjects/Hillel_Homework/Homework_Feb16_part2/Homework_Feb16_part2.csproj",
-    "outputPath": "/home/ivaneremenko/RiderProjects/Hillel_Homework/Homework_Feb16_part2/obj/",
+    "projectUniqueName": "/home/ivaneremenko/RiderProjects/Hillel_Homework/Homework_Feb16_Extended/Homework_Feb16_Extended.csproj",
+    "projectName": "Homework_Feb16_Extended",
+    "projectPath": "/home/ivaneremenko/RiderProjects/Hillel_Homework/Homework_Feb16_Extended/Homework_Feb16_Extended.csproj",
+    "outputPath": "/home/ivaneremenko/RiderProjects/Hillel_Homework/Homework_Feb16_Extended/obj/",
     "projectStyle": "PackageReference",
     "fallbackFolders": [
       "/usr/share/dotnet/sdk/NuGetFallbackFolder"

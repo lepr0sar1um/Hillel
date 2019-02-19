@@ -4,7 +4,7 @@ namespace Homework_Feb16
 {
 public static class Feb16
     {
-        public static void Main(string[] args)
+        static void Main(string[] args)
         {
             const string homeWorkMonth = "February";
             const int homeWorkDate = 16;
