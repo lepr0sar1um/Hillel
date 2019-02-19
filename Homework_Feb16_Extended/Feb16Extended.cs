@@ -88,9 +88,40 @@ namespace Homework_Feb16_part2
             Console.ReadKey();
         }
 
-        private byte ShowMenu(byte selector)
+        private void SelectMenuItem(byte selector)
         {
-            this._selector = selector;
+            var repeat = true;
+
+            while (repeat)
+            {
+                switch (selector)
+                {
+                    case 1:
+                        GetUserAccounts();
+                        break;
+
+                    case 2:
+                        GetUserDebt();
+                        break;
+
+                    case 3:
+                        GetUserPaymentsHistory();
+                        break;
+
+                    case 4:
+                        PayTheBills();
+                        break;
+
+                    case 0:
+                        repeat = false;
+                        Console.WriteLine("Have a good day!");
+                        break;
+                }
+            }
+        }
+
+        private void ShowMenu(byte selector)
+        {
 
             Console.WriteLine("Please, select one option:\n+" +
                               "1. View accounts\n+" +
@@ -99,43 +130,23 @@ namespace Homework_Feb16_part2
                               "4. Pay the bills\n+" +
                               "0. Exit");
 
+            _selector = selector;
             var repeat = true;
+
             while (repeat)
             {
                 try
                 {
                     selector = Convert.ToByte(Console.ReadLine());
+                    repeat = false;
+                    SelectMenuItem(selector);
                 }
                 catch (FormatException exception)
                 {
                     Console.WriteLine(exception.Message);
                     IncorrectInput();
-                
-                    continue;
-                }
 
-                switch (selector)
-                {
-                    case 1:
-                        GetUserAccounts();
-                        break;
-                    
-                    case 2:
-                        GetUserDebt();
-                        break;
-                    
-                    case 3:
-                        GetUserPaymentsHistory();
-                        break;
-                    
-                    case 4:
-                        PayTheBills();
-                        break;
-                    
-                    case 0:
-                        repeat = false;
-                        Console.WriteLine("Have a good day!");
-                        break;
+                    continue;
                 }
             }
         }
