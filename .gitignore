@@ -1,5 +1,8 @@
 .txt
 .idea
 .xml
+*.user
 /**/obj
 /**/bin
+./_linux
+./codestyles
