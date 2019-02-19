@@ -38,7 +38,7 @@ namespace Homework_Feb16_part2
 
                 if (IsAuthorized(firstName, secondName))
                 {
-                    ShowMenu();
+                    ShowMenu(byte _selector);
                     break;
                 }
                 IncorrectInput();
@@ -90,33 +90,28 @@ namespace Homework_Feb16_part2
 
         private void SelectMenuItem(byte selector)
         {
-            var repeat = true;
-
-            while (repeat)
+            switch (selector)
             {
-                switch (selector)
-                {
-                    case 1:
-                        GetUserAccounts();
-                        break;
+                case 1:
+                    GetUserAccounts();
+                    break;
 
-                    case 2:
-                        GetUserDebt();
-                        break;
+                case 2:
+                    GetUserDebt();
+                    break;
 
-                    case 3:
-                        GetUserPaymentsHistory();
-                        break;
+                case 3:
+                    GetUserPaymentsHistory();
+                    break;
 
-                    case 4:
-                        PayTheBills();
-                        break;
+                case 4:
+                    PayTheBills();
+                    break;
 
-                    case 0:
-                        repeat = false;
-                        Console.WriteLine("Have a good day!");
-                        break;
-                }
+                case 0:
+                    repeat = false;
+                    Console.WriteLine("Have a good day!");
+                    break;
             }
         }
 
