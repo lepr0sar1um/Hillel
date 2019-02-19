@@ -12,7 +12,6 @@ public static class Feb16
             Console.WriteLine("Hi! This is my homework for {0} {1}.", homeWorkMonth, homeWorkDate);
             
             var repeat = true;
- 
             while (repeat)
             {
                 ShowMenu();
@@ -26,6 +25,7 @@ public static class Feb16
                 {
                     Console.WriteLine(exception.Message);
                     ParseNumbersException();
+                    
                     continue;
                 }
                              
@@ -143,13 +143,13 @@ public static class Feb16
         private static void TaskFour()
         {
             const int daysInAWeek = 7;
-
             while (true)
             {
                 Console.Write("Please, input the quantity of days: ");
                 if (double.TryParse(Console.ReadLine(), out var days))
                 {
                     Console.WriteLine("Total full weeks = " + Math.Truncate(days/daysInAWeek));
+                    
                     WaitForUSer();
                     break;
                 }
@@ -168,6 +168,7 @@ public static class Feb16
                     if (double.TryParse(Console.ReadLine(), out var secondValue))
                     {
                         Console.WriteLine("Average = " + (firstValue + secondValue) / 2);
+                        
                         WaitForUSer();
                         break;
                     }
@@ -184,6 +185,7 @@ public static class Feb16
                 if (double.TryParse(Console.ReadLine(), out var introducedValue))
                 {
                     Console.WriteLine("The square root of the value entered = " + Math.Sqrt(introducedValue));
+                    
                     WaitForUSer();
                     break;
                 }
@@ -202,6 +204,7 @@ public static class Feb16
                     if (double.TryParse(Console.ReadLine(), out var sideB))
                     {
                         Console.WriteLine("Quantity of squares = " + Math.Truncate(sideA / sideB));
+                        
                         WaitForUSer();
                         break;
                     }
@@ -226,6 +229,7 @@ public static class Feb16
                 if (double.TryParse(Console.ReadLine(), out var number))
                 {
                     Console.WriteLine("You have entered {0}", number);
+                    
                     WaitForUSer();
                     break;
                 }
