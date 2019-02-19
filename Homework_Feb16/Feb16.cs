@@ -80,7 +80,7 @@ public static class Feb16
             }
         }
  
-        public static void TaskZero()
+        private static void TaskZero()
         {
             const string firstName = "Ivan", secondName = "Sergeevich", lastName = "Eremenko";
             const byte myAge = 26;
@@ -92,14 +92,14 @@ public static class Feb16
             WaitForUSer();
         }
        
-        public static void TaskOne()
+        private static void TaskOne()
         {
             Console.WriteLine("Pi = " + Math.PI);
             
             WaitForUSer();
         }
 
-        public static void TaskTwo()
+        private static void TaskTwo()
         {
             while (true)
             {
@@ -124,14 +124,14 @@ public static class Feb16
             }
         }
  
-        public static void TaskThree()
+        private static void TaskThree()
         {
             while (true)
             {
                 Console.Write("Please, insert quantity in centimeters: ");
                 if (double.TryParse(Console.ReadLine(), out var centiMeters))
                 {
-                    Console.WriteLine("Total meters in your number: " + (centiMeters / 100));
+                    Console.WriteLine("Total full meters in your number: " + Math.Truncate(centiMeters / 100));
                     
                     WaitForUSer();
                     break;
@@ -140,7 +140,7 @@ public static class Feb16
             }
         }
  
-        public static void TaskFour()
+        private static void TaskFour()
         {
             const int daysInAWeek = 7;
 
@@ -149,7 +149,7 @@ public static class Feb16
                 Console.Write("Please, input the quantity of days: ");
                 if (double.TryParse(Console.ReadLine(), out var days))
                 {
-                    Console.WriteLine("Full weeks = " + (days/daysInAWeek));
+                    Console.WriteLine("Total full weeks = " + Math.Truncate(days/daysInAWeek));
                     WaitForUSer();
                     break;
                 }
@@ -157,7 +157,7 @@ public static class Feb16
             }
         }
 
-        public static void TaskFive()
+        private static void TaskFive()
         {
             while (true)
             {
@@ -176,7 +176,7 @@ public static class Feb16
             }
         }
 
-        public static void TaskSix()
+        private static void TaskSix()
         {
             while (true)
             {
@@ -190,8 +190,8 @@ public static class Feb16
                 ParseNumbersException();
             }
         }
- 
-        public static void TaskSeven()
+
+        private static void TaskSeven()
         {
             while (true)
             {
@@ -201,7 +201,7 @@ public static class Feb16
                     Console.Write("Please, input side B in mm: ");
                     if (double.TryParse(Console.ReadLine(), out var sideB))
                     {
-                        Console.WriteLine("The are {0} squares", sideA / sideB);
+                        Console.WriteLine("Quantity of squares = " + Math.Truncate(sideA / sideB));
                         WaitForUSer();
                         break;
                     }
@@ -209,8 +209,8 @@ public static class Feb16
                 ParseNumbersException();
             }        
         }
- 
-        public static void TaskOneSecondPart()
+
+        private static void TaskOneSecondPart()
         {
             Console.WriteLine("Machine name: {0}\nOS version: {1}\nUser name: {2}\nProcessor Count: {3}\n",
                 Environment.MachineName, Environment.OSVersion, Environment.UserName, Environment.ProcessorCount);
@@ -218,7 +218,7 @@ public static class Feb16
             WaitForUSer();
         }
  
-        public static void TaskTwoSecondPart()
+        private static void TaskTwoSecondPart()
         {
             while (true)
             {
@@ -233,19 +233,19 @@ public static class Feb16
             }
         }
  
-        public static void WaitForUSer()
+        private static void WaitForUSer()
         {
             Console.Write("Press any key to continue...");
             Console.ReadKey();
         }
 
-        public static void ParseNumbersException()
+        private static void ParseNumbersException()
         {
             Console.WriteLine("Please, use only numbers!");
             WaitForUSer();
         }
 
-        public static void ShowMenu()
+        private static void ShowMenu()
         {
             Console.Clear();
             Console.Write("Task list:\n\n" +
