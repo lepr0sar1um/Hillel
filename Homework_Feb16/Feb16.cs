@@ -1,5 +1,4 @@
 ﻿using System;
-using System.ComponentModel;
 
 namespace Homework_Feb16
 {
@@ -23,8 +22,9 @@ public static class Feb16
                 {
                     selector = Convert.ToInt32(Console.ReadLine());
                 }
-                catch (Exception e)
-                {   
+                catch (Exception exception)
+                {
+                    Console.WriteLine(exception.Message);
                     ParseNumbersException();
                     continue;
                 }
@@ -101,8 +101,7 @@ public static class Feb16
 
         public static void TaskTwo()
         {
-            var flag = true;
-            while (flag)
+            while (true)
             {
                 Console.Write("Please, input first number: ");
                 if (double.TryParse(Console.ReadLine(), out var firstNumber))
@@ -116,70 +115,51 @@ public static class Feb16
                             Console.WriteLine("OK, let me input two gaps between these numbers: " +
                                               "{0}  {1}  {2}", firstNumber, secondNumber, thirdNumber);
 
-                            flag = false;
-                        }
-                        else
-                        {
-                            ParseNumbersException();
+                            WaitForUSer();
+                            break;
                         }
                     }
-                    else
-                    {
-                        ParseNumbersException();
-                    }
                 }
-                else
-                {
-                    ParseNumbersException();
-                }
+                ParseNumbersException();
             }
-            WaitForUSer();
         }
  
         public static void TaskThree()
         {
-            var flag = true;
-            while (flag)
+            while (true)
             {
                 Console.Write("Please, insert quantity in centimeters: ");
                 if (double.TryParse(Console.ReadLine(), out var centiMeters))
                 {
-                    flag = false;
                     Console.WriteLine("Total meters in your number: " + (centiMeters / 100));
+                    
+                    WaitForUSer();
+                    break;
                 }
-                else
-                {
-                    ParseNumbersException();
-                }
+                ParseNumbersException();
             }
-            WaitForUSer();
         }
  
         public static void TaskFour()
         {
             const int daysInAWeek = 7;
 
-            var flag = true;
-            while (flag)
+            while (true)
             {
                 Console.Write("Please, input the quantity of days: ");
                 if (double.TryParse(Console.ReadLine(), out var days))
                 {
-                    flag = false;
                     Console.WriteLine("Full weeks = " + (days/daysInAWeek));
+                    WaitForUSer();
+                    break;
                 }
-                else
-                {
-                    ParseNumbersException();
-                }
+                ParseNumbersException();
             }
-            WaitForUSer();
         }
 
         public static void TaskFive()
         {
-            var flag = true;
-            while (flag)
+            while (true)
             {
                 Console.Write("Input first value: ");
                 if (double.TryParse(Console.ReadLine(), out var firstValue))
@@ -187,21 +167,13 @@ public static class Feb16
                     Console.Write("Input second value: ");
                     if (double.TryParse(Console.ReadLine(), out var secondValue))
                     {
-                        flag = false;
                         Console.WriteLine("Average = " + (firstValue + secondValue) / 2);
-
-                    }
-                    else
-                    {
-                        ParseNumbersException();
+                        WaitForUSer();
+                        break;
                     }
                 }
-                else
-                {
-                    ParseNumbersException();
-                }
+                ParseNumbersException();
             }
-            WaitForUSer();
         }
 
         public static void TaskSix()
@@ -214,19 +186,16 @@ public static class Feb16
                 {
                     flag = false;
                     Console.WriteLine("The square root of the value entered = " + Math.Sqrt(introducedValue));
+                    WaitForUSer();
+                    break;
                 }
-                else
-                {
-                    ParseNumbersException();
-                }
+                ParseNumbersException();
             }
-            WaitForUSer();
         }
  
         public static void TaskSeven()
         {
-            var flag = true;
-            while (flag)
+            while (true)
             {
                 Console.Write("Please, input side A in mm: ");
                 if (double.TryParse(Console.ReadLine(), out var sideA))
@@ -234,20 +203,13 @@ public static class Feb16
                     Console.Write("Please, input side B in mm: ");
                     if (double.TryParse(Console.ReadLine(), out var sideB))
                     {
-                        flag = false;
                         Console.WriteLine("The are {0} squares", sideA / sideB);
-                    }
-                    else
-                    {
-                        ParseNumbersException();
+                        WaitForUSer();
+                        break;
                     }
                 }
-                else
-                {
-                    ParseNumbersException();
-                }
-            }           
-            WaitForUSer();
+                ParseNumbersException();
+            }        
         }
  
         public static void TaskOneSecondPart()
@@ -268,13 +230,11 @@ public static class Feb16
                 {
                     flag = false;
                     Console.WriteLine("You have entered {0}", number);
+                    WaitForUSer();
+                    break;
                 }
-                else
-                {
-                    ParseNumbersException();
-                }
+                ParseNumbersException();
             }
-            WaitForUSer();
         }
  
         public static void WaitForUSer()
