@@ -178,13 +178,11 @@ public static class Feb16
 
         public static void TaskSix()
         {
-            var flag = true;
-            while (flag)
+            while (true)
             {
                 Console.Write("Input your value: ");
                 if (double.TryParse(Console.ReadLine(), out var introducedValue))
                 {
-                    flag = false;
                     Console.WriteLine("The square root of the value entered = " + Math.Sqrt(introducedValue));
                     WaitForUSer();
                     break;
@@ -222,13 +220,11 @@ public static class Feb16
  
         public static void TaskTwoSecondPart()
         {
-            var flag = true;
-            while (flag)
+            while (true)
             {
                 Console.Write("Enter number: ");
                 if (double.TryParse(Console.ReadLine(), out var number))
                 {
-                    flag = false;
                     Console.WriteLine("You have entered {0}", number);
                     WaitForUSer();
                     break;
