@@ -109,7 +109,6 @@ namespace Homework_Feb16_part2
                     break;
 
                 case 0:
-                    repeat = false;
                     Console.WriteLine("Have a good day!");
                     break;
             }
