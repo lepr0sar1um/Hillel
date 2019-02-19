@@ -23,7 +23,7 @@ namespace Homework_Feb16_part2
             
         }
         
-        private static void Authorization()
+        private void Authorization()
         {
 
             while (true)
@@ -38,7 +38,7 @@ namespace Homework_Feb16_part2
 
                 if (IsAuthorized(firstName, secondName))
                 {
-                    ShowMenu(byte _selector);
+                    ShowMenu();
                     break;
                 }
                 IncorrectInput();
@@ -63,17 +63,17 @@ namespace Homework_Feb16_part2
 
         private static void GetUserPaymentsHistory()
         {
-            
+            //Сгенерировать случайную историю платежей
         }
         
         private static void GetUserDebt()
         {
-            
+            //Добавить ввод показаний и расчет долга на их основе
         }
         
         private static void PayTheBills()
         {
-            
+            //Что-то придумать, эмулируещее оплату
         }
 
         private static void IncorrectInput()
@@ -114,7 +114,7 @@ namespace Homework_Feb16_part2
             }
         }
 
-        private void ShowMenu(byte selector)
+        private void ShowMenu()
         {
 
             Console.WriteLine("Please, select one option:\n+" +
@@ -124,16 +124,15 @@ namespace Homework_Feb16_part2
                               "4. Pay the bills\n+" +
                               "0. Exit");
 
-            _selector = selector;
             var repeat = true;
 
             while (repeat)
             {
                 try
                 {
-                    selector = Convert.ToByte(Console.ReadLine());
+                    _selector = Convert.ToByte(Console.ReadLine());
                     repeat = false;
-                    SelectMenuItem(selector);
+                    SelectMenuItem(_selector);
                 }
                 catch (FormatException exception)
                 {
