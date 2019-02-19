@@ -182,9 +182,9 @@ public static class Feb16
             while (true)
             {
                 Console.Write("Input your value: ");
-                if (double.TryParse(Console.ReadLine(), out var introducedValue))
+                if (double.TryParse(Console.ReadLine(), out var originalNumber))
                 {
-                    Console.WriteLine("The square root of the value entered = " + Math.Sqrt(introducedValue));
+                    Console.WriteLine("The number in the second degree = " + Math.Pow(originalNumber, 2));
                     
                     WaitForUSer();
                     break;
