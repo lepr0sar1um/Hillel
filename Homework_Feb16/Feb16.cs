@@ -148,7 +148,7 @@ public static class Feb16
                 Console.Write("Please, input the quantity of days: ");
                 if (double.TryParse(Console.ReadLine(), out var days))
                 {
-                    Console.WriteLine("Total full weeks = " + Math.Truncate(days/daysInAWeek));
+                    Console.WriteLine("Total full weeks = " + Math.Truncate(days / daysInAWeek));
                     
                     WaitForUSer();
                     break;
