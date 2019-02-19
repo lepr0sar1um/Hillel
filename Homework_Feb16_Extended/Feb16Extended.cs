@@ -2,7 +2,7 @@
 
 namespace Homework_Feb16_part2
 {
-    public class Feb16Extended
+    class Feb16Extended
     {
         private const string USER_FIRST_NAME = "Ivan";
         private const string USER_SECOND_NAME = "Eremenko";
@@ -10,17 +10,22 @@ namespace Homework_Feb16_part2
         private const short ELECTRICITY_ACCOUNT = 2222;
         private const short HEATING_ACCOUNT = 3333;
         private const short GAS_ACCOUNT = 4444;
+        private byte _selector;
         
 
         public static void Main(string[] args)
         {
+            Console.WriteLine("This program can show you your accounts.\n +" +
+                              "You can select account, view its info, pay.\n" +
+                              "Please, login to get access");
+            
             Authorization();
-            ShowMenu();
-            GetUserAccounts();
+            
         }
         
         private static void Authorization()
         {
+
             while (true)
             {
                 Console.Clear();
@@ -56,7 +61,17 @@ namespace Homework_Feb16_part2
             Console.WriteLine("Gas:           {0}", GAS_ACCOUNT);
         }
 
-        private static void UserPayments()
+        private static void GetUserPaymentsHistory()
+        {
+            
+        }
+        
+        private static void GetUserDebt()
+        {
+            
+        }
+        
+        private static void PayTheBills()
         {
             
         }
@@ -73,9 +88,56 @@ namespace Homework_Feb16_part2
             Console.ReadKey();
         }
 
-        private static void ShowMenu()
+        private byte ShowMenu(byte selector)
         {
-            
+            this._selector = selector;
+
+            Console.WriteLine("Please, select one option:\n+" +
+                              "1. View accounts\n+" +
+                              "2. View this month debt\n+" +
+                              "3. Payments history\n+" +
+                              "4. Pay the bills\n+" +
+                              "0. Exit");
+
+            var repeat = true;
+            while (repeat)
+            {
+                try
+                {
+                    selector = Convert.ToByte(Console.ReadLine());
+                }
+                catch (FormatException exception)
+                {
+                    Console.WriteLine(exception.Message);
+                    IncorrectInput();
+                
+                    continue;
+                }
+
+                switch (selector)
+                {
+                    case 1:
+                        GetUserAccounts();
+                        break;
+                    
+                    case 2:
+                        GetUserDebt();
+                        break;
+                    
+                    case 3:
+                        GetUserPaymentsHistory();
+                        break;
+                    
+                    case 4:
+                        PayTheBills();
+                        break;
+                    
+                    case 0:
+                        repeat = false;
+                        Console.WriteLine("Have a good day!");
+                        break;
+                }
+            }
         }
     }
 }
