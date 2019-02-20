@@ -83,7 +83,7 @@ namespace Homework_Feb16_part2
             //Что-то придумать, эмулируещее оплату
         }
 
-        private static void IncorrectInput()
+        public static void IncorrectInput()
         {
             Console.WriteLine("Incorrect input! Please, enter correct data.");
             WaitForUSer();
@@ -121,7 +121,7 @@ namespace Homework_Feb16_part2
             }
         }
 
-        public void ShowMenu()
+        public static void ShowMenu()
         {
 
             Console.WriteLine("Please, select one option:\n+" +
