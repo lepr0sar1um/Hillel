@@ -2,7 +2,34 @@
 
 namespace Homework_Feb16_part2
 {
-    class Feb16Extended
+
+    public class Options
+    {
+        public void Authorization()
+        {
+
+            while (true)
+            {
+                Console.Clear();
+
+                Console.Write("Please, input you name: ");
+                var firstName = Console.ReadLine();
+
+                Console.Write("Please, input your second name: ");
+                var secondName = Console.ReadLine();
+
+                if (Menu.IsAuthorized(firstName, secondName))
+                {
+                    Menu.ShowMenu();
+                    break;
+                }
+                Menu.IncorrectInput();
+            }
+
+        }
+    }
+    
+    class Menu
     {
         private const string USER_FIRST_NAME = "Ivan";
         private const string USER_SECOND_NAME = "Eremenko";
@@ -19,34 +46,14 @@ namespace Homework_Feb16_part2
                               "You can select account, view its info, pay.\n" +
                               "Please, login to get access");
             
-            Authorization();
+            var auth = new Options{};
+            auth.Authorization();
             
         }
         
-        private void Authorization()
-        {
 
-            while (true)
-            {
-                Console.Clear();
 
-                Console.Write("Please, input you name: ");
-                var firstName = Console.ReadLine();
-
-                Console.Write("Please, input your second name: ");
-                var secondName = Console.ReadLine();
-
-                if (IsAuthorized(firstName, secondName))
-                {
-                    ShowMenu();
-                    break;
-                }
-                IncorrectInput();
-            }
-
-        }
-
-        private static bool IsAuthorized(string firstName, string secondName)
+        public static bool IsAuthorized(string firstName, string secondName)
         {
             return (firstName.Equals(USER_FIRST_NAME) && secondName.Equals(USER_SECOND_NAME));
         }
@@ -114,7 +121,7 @@ namespace Homework_Feb16_part2
             }
         }
 
-        private void ShowMenu()
+        public void ShowMenu()
         {
 
             Console.WriteLine("Please, select one option:\n+" +
