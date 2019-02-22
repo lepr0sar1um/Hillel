@@ -4,6 +4,8 @@ namespace Homework_Feb16_part2
 {
     public class Validation
     {
+        Menu menu = new Menu();
+        Options forward = new Options();
         public bool IsAuthorized(string firstName, string secondName)
         {
             var user = new UserInfo();
@@ -13,8 +15,6 @@ namespace Homework_Feb16_part2
         public void IsCorrectInput()
         {
             Console.Clear();
-            var menu = new Menu();
-            var forward = new Options();
 
             Console.WriteLine("Incorrect input! Please, enter correct data.");
             menu.WaitForUSer();

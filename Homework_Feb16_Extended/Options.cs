@@ -1,9 +1,11 @@
 using System;
+using System.Runtime.InteropServices;
 
 namespace Homework_Feb16_part2
 {
     public class Options
     {   
+        Menu menu = new Menu();
         
         private short hotWaterAccount = 1111;
         private short electricityAccount = 2222;
@@ -42,16 +44,14 @@ namespace Homework_Feb16_part2
         {
             //Сгенерировать случайную историю платежей
             
-            var user = new Menu();
-            user.WaitForUSer();
-            user.ShowMenu();
+            menu.WaitForUSer();
+            menu.ShowMenu();
         }
         
         public void GetUserDebt()
         {
             //Добавить ввод показаний и расчет долга на их основе
             
-            var menu = new Menu();
             menu.WaitForUSer();
             menu.ShowMenu();
         }
@@ -68,10 +68,10 @@ namespace Homework_Feb16_part2
                 GasAccount
             };*/
 
-            (string, short) water = ("Hot water account:", HotWaterAccount);
-            (string, short) electricity = ("Electricity account:", ElectricityAccount);
-            (string, short) heating = ("Heating account:", HeatingAccount);
-            (string, short) gas = ("Gas account:", GasAccount);
+            var water = ("Hot water account:", HotWaterAccount);
+            var electricity = ("Electricity account:", ElectricityAccount);
+            var heating = ("Heating account:", HeatingAccount);
+            var gas = ("Gas account:", GasAccount);
             
 
             //foreach (var account in Accounts)
@@ -81,15 +81,17 @@ namespace Homework_Feb16_part2
 
             Console.WriteLine(water +"\n" + gas + "\n" + heating + "\n" + electricity);
             
-            var user = new Menu();
-            user.WaitForUSer();
-            user.ShowMenu();
+            menu.WaitForUSer();
+            menu.ShowMenu();
         }
 
         
         public void PayTheBills()
         {
             //Что-то придумать, эмулируещее оплату
+            
+            menu.WaitForUSer();
+            menu.ShowMenu();
         }
     }
 }

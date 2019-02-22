@@ -5,11 +5,7 @@ namespace Homework_Feb16_part2
 {
     public class UserInfo
     {
-        private string userFirstName = "ivan";
-        private string userSecondName = "eremenko";
-        
-        public string UserFirstName => userFirstName;
-        public string UserSecondName => userSecondName;
-
+        public string UserFirstName { get; } = "ivan";
+        public string UserSecondName { get; } = "eremenko";
     }
 }
