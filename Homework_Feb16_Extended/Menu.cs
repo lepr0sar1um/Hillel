@@ -9,7 +9,7 @@ namespace Homework_Feb16_part2
         public void ShowMenu()
         {
             
-            var isValid = new Validation();
+            var check = new Validation();
 
             Console.WriteLine("Please, select one option:\n+" +
                               "1. View accounts\n+" +
@@ -29,7 +29,7 @@ namespace Homework_Feb16_part2
                 catch (FormatException exception)
                 {
                     Console.WriteLine(exception.Message);
-                    isValid.IncorrectInput();
+                    check.IsCorrectInput();
                     continue;
                 }
             }
@@ -61,6 +61,11 @@ namespace Homework_Feb16_part2
                     Console.WriteLine("Have a good day!");
                     break;
             }
+        }
+        
+        public void WaitForUSer()
+        {
+            
         }
     }
 }

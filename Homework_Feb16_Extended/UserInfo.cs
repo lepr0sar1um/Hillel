@@ -19,17 +19,20 @@ namespace Homework_Feb16_part2
         public short GasAccount => gasAccount;
 
 
-        public static void GetUserPaymentsHistory()
+        public void GetUserPaymentsHistory()
         {
             //Сгенерировать случайную историю платежей
         }
         
-        public static void GetUserDebt()
+        public void GetUserDebt()
         {
             //Добавить ввод показаний и расчет долга на их основе
         }
 
-        public int[] userAccount = { };
+        public void GetUserAccounts()
+        {
+            
+        }
 
     }
 }

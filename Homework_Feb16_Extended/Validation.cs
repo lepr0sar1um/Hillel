@@ -1,4 +1,5 @@
 using System;
+using System.Runtime.InteropServices;
 
 namespace Homework_Feb16_part2
 {
@@ -10,10 +11,12 @@ namespace Homework_Feb16_part2
             return (firstName.Equals(user.UserFirstName) && secondName.Equals(user.UserSecondName));
         }
 
-        public void IncorrectInput()
+        public void IsCorrectInput()
         {
+            var menu = new Menu();
+
             Console.WriteLine("Incorrect input! Please, enter correct data.");
-            WaitForUSer();
+            menu.WaitForUSer();
         }
     }
 }

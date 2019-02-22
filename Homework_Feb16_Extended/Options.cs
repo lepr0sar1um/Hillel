@@ -24,11 +24,11 @@ namespace Homework_Feb16_part2
                     menu.ShowMenu();
                     break;
                 }
-                isValid.IncorrectInput();
+                isValid.IsCorrectInput();
             }
         }
         
-        public static void PayTheBills()
+        public void PayTheBills()
         {
             //Что-то придумать, эмулируещее оплату
         }
