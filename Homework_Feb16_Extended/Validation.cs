@@ -1,5 +1,4 @@
 using System;
-using System.Runtime.InteropServices;
 
 namespace Homework_Feb16_part2
 {
@@ -13,10 +12,13 @@ namespace Homework_Feb16_part2
 
         public void IsCorrectInput()
         {
+            Console.Clear();
             var menu = new Menu();
+            var forward = new Options();
 
             Console.WriteLine("Incorrect input! Please, enter correct data.");
             menu.WaitForUSer();
+            forward.Authorization();
         }
     }
 }

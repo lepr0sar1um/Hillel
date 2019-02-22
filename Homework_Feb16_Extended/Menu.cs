@@ -8,15 +8,16 @@ namespace Homework_Feb16_part2
         
         public void ShowMenu()
         {
+            Console.Clear();
             
             var check = new Validation();
 
-            Console.WriteLine("Please, select one option:\n+" +
-                              "1. View accounts\n+" +
-                              "2. View this month debt\n+" +
-                              "3. Payments history\n+" +
-                              "4. Pay the bills\n+" +
-                              "0. Exit");
+            Console.Write("1. View accounts\n" +
+                              "2. View this month debt\n" +
+                              "3. Payments history\n" +
+                              "4. Pay the bills\n" +
+                              "0. Exit\n"+
+                              "Please, select one option: ");
 
             while (true)
             {
@@ -26,31 +27,28 @@ namespace Homework_Feb16_part2
                     SelectMenuItem(_selector);
                     break;
                 }
-                catch (FormatException exception)
+                catch (FormatException)
                 {
-                    Console.WriteLine(exception.Message);
                     check.IsCorrectInput();
-                    continue;
                 }
             }
         }
         
         private static void SelectMenuItem(byte selector)
         {
-            var user = new UserInfo();
             var options = new Options();
             switch (selector)
             {
                 case 1:
-                    user.GetUserAccounts();
+                    options.GetUserAccounts();
                     break;
 
                 case 2:
-                    user.GetUserDebt();
+                    options.GetUserDebt();
                     break;
 
                 case 3:
-                    user.GetUserPaymentsHistory();
+                    options.GetUserPaymentsHistory();
                     break;
 
                 case 4:
@@ -63,9 +61,12 @@ namespace Homework_Feb16_part2
             }
         }
         
-        public void WaitForUSer()
+        public int WaitForUSer()
         {
-            
+            Console.Write("Press any key to continue...");
+            Console.ReadKey();
+
+            return 0;
         }
     }
 }
