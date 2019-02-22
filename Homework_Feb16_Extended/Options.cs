@@ -51,9 +51,9 @@ namespace Homework_Feb16_part2
         {
             //Добавить ввод показаний и расчет долга на их основе
             
-            var user = new Menu();
-            user.WaitForUSer();
-            user.ShowMenu();
+            var menu = new Menu();
+            menu.WaitForUSer();
+            menu.ShowMenu();
         }
 
         public void GetUserAccounts()

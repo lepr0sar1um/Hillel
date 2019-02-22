@@ -4,7 +4,7 @@ namespace Homework_Feb16_part2
 {
     public class Menu
     {
-        private byte _selector;
+        private byte selector;
         
         public void ShowMenu()
         {
@@ -23,8 +23,8 @@ namespace Homework_Feb16_part2
             {
                 try
                 {
-                    _selector = Convert.ToByte(Console.ReadLine());
-                    SelectMenuItem(_selector);
+                    selector = Convert.ToByte(Console.ReadLine());
+                    SelectMenuItem(selector);
                     break;
                 }
                 catch (FormatException)
@@ -61,12 +61,10 @@ namespace Homework_Feb16_part2
             }
         }
         
-        public int WaitForUSer()
+        public void WaitForUSer()
         {
             Console.Write("Press any key to continue...");
             Console.ReadKey();
-
-            return 0;
         }
     }
 }
