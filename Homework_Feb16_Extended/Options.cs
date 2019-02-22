@@ -4,18 +4,14 @@ using System.Runtime.InteropServices;
 namespace Homework_Feb16_part2
 {
     public class Options
-    {   
-        Menu menu = new Menu();
-        
-        private short hotWaterAccount = 1111;
-        private short electricityAccount = 2222;
-        private short heatingAccount = 3333;
-        private short gasAccount = 4444;
-        public short HotWaterAccount => hotWaterAccount;
-        public short ElectricityAccount => electricityAccount;
-        public short HeatingAccount => heatingAccount;
-        public short GasAccount => gasAccount;
-        
+    {
+        private readonly Menu _menu = new Menu();
+
+        private readonly short _hotWaterAccount = 1111;
+        private readonly short _electricityAccount  = 2222;
+        private readonly short _heatingAccount = 3333;
+        private readonly short _gasAccount = 4444;
+
         public void Authorization()
         {
             var menu = new Menu();
@@ -44,16 +40,16 @@ namespace Homework_Feb16_part2
         {
             //Сгенерировать случайную историю платежей
             
-            menu.WaitForUSer();
-            menu.ShowMenu();
+            _menu.WaitForUSer();
+            _menu.ShowMenu();
         }
         
         public void GetUserDebt()
         {
             //Добавить ввод показаний и расчет долга на их основе
             
-            menu.WaitForUSer();
-            menu.ShowMenu();
+            _menu.WaitForUSer();
+            _menu.ShowMenu();
         }
 
         public void GetUserAccounts()
@@ -68,10 +64,10 @@ namespace Homework_Feb16_part2
                 GasAccount
             };*/
 
-            var water = ("Hot water account:", HotWaterAccount);
-            var electricity = ("Electricity account:", ElectricityAccount);
-            var heating = ("Heating account:", HeatingAccount);
-            var gas = ("Gas account:", GasAccount);
+            var water = ("Hot water account:", HotWaterAccount: _hotWaterAccount);
+            var electricity = ("Electricity account:", ElectricityAccount: _electricityAccount);
+            var heating = ("Heating account:", HeatingAccount: _heatingAccount);
+            var gas = ("Gas account:", GasAccount: _gasAccount);
             
 
             //foreach (var account in Accounts)
@@ -81,8 +77,8 @@ namespace Homework_Feb16_part2
 
             Console.WriteLine(water +"\n" + gas + "\n" + heating + "\n" + electricity);
             
-            menu.WaitForUSer();
-            menu.ShowMenu();
+            _menu.WaitForUSer();
+            _menu.ShowMenu();
         }
 
         
@@ -90,8 +86,8 @@ namespace Homework_Feb16_part2
         {
             //Что-то придумать, эмулируещее оплату
             
-            menu.WaitForUSer();
-            menu.ShowMenu();
+            _menu.WaitForUSer();
+            _menu.ShowMenu();
         }
     }
 }
