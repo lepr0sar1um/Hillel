@@ -3,9 +3,11 @@ using System;
 namespace Homework_Feb16_part2
 {
     public class Options
-    {
+    {   
         public void Authorization()
         {
+            var menu = new Menu();
+            var isValid = new Validation();
 
             while (true)
             {
@@ -17,14 +19,24 @@ namespace Homework_Feb16_part2
                 Console.Write("Please, input your second name: ");
                 var secondName = Console.ReadLine();
 
-                if (Menu.IsAuthorized(firstName, secondName))
+                if (isValid.IsAuthorized(firstName, secondName))
                 {
-                    Menu.ShowMenu();
+                    menu.ShowMenu();
                     break;
                 }
-                Menu.IncorrectInput();
+                isValid.IncorrectInput();
             }
-
+        }
+        
+        public static void PayTheBills()
+        {
+            //Что-то придумать, эмулируещее оплату
+        }
+        
+        private static void WaitForUSer()
+        {
+            Console.Write("Press any key to continue...");
+            Console.ReadKey();
         }
     }
 }
