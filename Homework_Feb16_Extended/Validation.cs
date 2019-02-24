@@ -8,9 +8,7 @@ namespace Homework_Feb16_part2
 
         public bool IsAuthorized(string firstName, string secondName)
         {
-            
-            var user = new UserInfo();
-            return (firstName.Equals(user.UserFirstName) && secondName.Equals(user.UserSecondName));
+            return false;
         }
 
         public bool IsCorrectInput()
