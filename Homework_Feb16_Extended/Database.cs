@@ -1,3 +1,4 @@
+using System;
 using MySql.Data.MySqlClient;
 
 namespace Homework_Feb16_part2
@@ -9,7 +10,16 @@ namespace Homework_Feb16_part2
         private void OpenConnection()
         {
             var connection = new MySqlConnection(connStr);
-            connection.Open();
+
+            try
+            {
+                connection.Open();
+
+            }
+            catch (Exception exception)
+            {
+                Console.WriteLine(exception.Message);
+            }
         }
 
         private void CloseConnection()
