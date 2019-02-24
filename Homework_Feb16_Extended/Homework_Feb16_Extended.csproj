@@ -6,4 +6,8 @@
         <RootNamespace>Homework_Feb16_part2</RootNamespace>
     </PropertyGroup>
 
+    <ItemGroup>
+      <PackageReference Include="MySql.Data" Version="8.0.15" />
+    </ItemGroup>
+
 </Project>
