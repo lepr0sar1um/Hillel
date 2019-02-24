@@ -5,11 +5,11 @@ namespace Homework_Feb16_part2
 {
     public class Database
     {
-        const string connStr = "server=localhost;user=lepre;database=Homework_Feb16;password=password";
+        private const string ConnStr = "server=localhost;user=lepre;database=Homework_Feb16;password=password";
 
         private void OpenConnection()
         {
-            var connection = new MySqlConnection(connStr);
+            var connection = new MySqlConnection(ConnStr);
 
             try
             {
@@ -24,7 +24,7 @@ namespace Homework_Feb16_part2
 
         private void CloseConnection()
         {
-            var connection = new MySqlConnection(connStr);
+            var connection = new MySqlConnection(ConnStr);
             connection.Close();
         }
     }
