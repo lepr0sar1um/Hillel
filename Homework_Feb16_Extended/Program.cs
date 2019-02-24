@@ -14,8 +14,8 @@ namespace Homework_Feb16_part2
             var user = new Menu();
             user.WaitForUSer();
             
-            var auth = new Options{};
-            auth.Authorization();
+            var auth = new Authorization();
+            auth.Login();
             
         }
     }
