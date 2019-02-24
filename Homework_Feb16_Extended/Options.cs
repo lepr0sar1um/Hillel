@@ -7,11 +7,6 @@ namespace Homework_Feb16_part2
     {
         private readonly Menu _menu = new Menu();
 
-        private readonly short _hotWaterAccount = 1111;
-        private readonly short _electricityAccount  = 2222;
-        private readonly short _heatingAccount = 3333;
-        private readonly short _gasAccount = 4444;
-
         public void Authorization()
         {
             var menu = new Menu();
@@ -22,10 +17,10 @@ namespace Homework_Feb16_part2
                 Console.Clear();
 
                 Console.Write("Please, input you name: ");
-                var firstName = Console.ReadLine().ToLower();
+                var firstName = Console.ReadLine();
 
                 Console.Write("Please, input your second name: ");
-                var secondName = Console.ReadLine().ToLower();
+                var secondName = Console.ReadLine();
 
                 if (check.IsAuthorized(firstName, secondName))
                 {
@@ -34,6 +29,11 @@ namespace Homework_Feb16_part2
                 }
                 check.IsCorrectInput();
             }
+        }
+
+        public void Registration()
+        {
+            
         }
         
         public void GetUserPaymentsHistory()
@@ -55,30 +55,7 @@ namespace Homework_Feb16_part2
         public void GetUserAccounts()
         {
             Console.Clear();
-            
-            /*List<short> Accounts = new List<short>()
-            {
-                HotWaterAccount,
-                ElectricityAccount,
-                HeatingAccount,
-                GasAccount
-            };*/
 
-            var water = ("Hot water account:", HotWaterAccount: _hotWaterAccount);
-            var electricity = ("Electricity account:", ElectricityAccount: _electricityAccount);
-            var heating = ("Heating account:", HeatingAccount: _heatingAccount);
-            var gas = ("Gas account:", GasAccount: _gasAccount);
-            
-
-            //foreach (var account in Accounts)
-            //{
-            //    Console.WriteLine(account);
-            //}
-
-            Console.WriteLine(water +"\n" + gas + "\n" + heating + "\n" + electricity);
-            
-            _menu.WaitForUSer();
-            _menu.ShowMenu();
         }
 
         
