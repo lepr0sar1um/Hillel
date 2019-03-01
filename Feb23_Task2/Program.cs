@@ -19,7 +19,7 @@ namespace Feb23_Task2
                 {
                     if (inputValue >= 100 && inputValue <= 100000000)
                     {
-                        Console.WriteLine("Input value has {0} even and {1} odd values", 
+                        Console.WriteLine("Input value has {0}% even and {1}% odd values", 
                             even.EvenPerc(inputValue), odd.OddPerc(inputValue));
                         break;
                     }
