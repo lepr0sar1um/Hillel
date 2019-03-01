@@ -1,9 +1,8 @@
 ﻿using System;
 
-namespace Homework_Feb16_part2
+namespace utility_services
 {
-    
-    class Program
+    internal class Program
     {
         public static void Main(string[] args)
         {
