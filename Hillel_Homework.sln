@@ -1,12 +1,14 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Homework_Feb16", "Homework_Feb16\Homework_Feb16.csproj", "{EE7FE9DE-6BA8-44C8-B89B-727041A76984}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Feb16_Task12", "Feb16_Task12\Feb16_Task12.csproj", "{EE7FE9DE-6BA8-44C8-B89B-727041A76984}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Paymants", "Paymants\Paymants.csproj", "{F272DD57-4E32-4265-9841-2D8CE6717513}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Feb23_task1", "Feb23_task1\Feb23_task1.csproj", "{0271C760-DB04-4005-9448-9C634A399D03}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Feb23_Task2", "Feb23_Task2\Feb23_Task2.csproj", "{34C6DD2E-3692-4BD1-A1F4-ABDA3DC973F1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Feb23_Task3", "Feb23_Task3\Feb23_Task3.csproj", "{CE916F79-7CF5-479A-AFE8-33F467771CEE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -30,5 +32,9 @@ Global
 		{34C6DD2E-3692-4BD1-A1F4-ABDA3DC973F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{34C6DD2E-3692-4BD1-A1F4-ABDA3DC973F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{34C6DD2E-3692-4BD1-A1F4-ABDA3DC973F1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE916F79-7CF5-479A-AFE8-33F467771CEE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE916F79-7CF5-479A-AFE8-33F467771CEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE916F79-7CF5-479A-AFE8-33F467771CEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE916F79-7CF5-479A-AFE8-33F467771CEE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

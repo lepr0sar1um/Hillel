@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Homework_Feb16
+namespace Feb16_Task12
 {
 public static class Feb16
     {
