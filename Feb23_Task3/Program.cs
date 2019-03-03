@@ -22,7 +22,7 @@ namespace Feb23_Task3
                 var rightPart = int.Parse(ticketNumber?.Substring((ticketNumber.Length) / 2, ticketNumber.Length -3));
 
                 Console.WriteLine(IsHappy(leftPart) == IsHappy(rightPart)
-                    ? "You have happy ticket!"
+                    ? "You have a happy ticket!"
                     : "It is not a happy ticket :(");
                 
                 break;
