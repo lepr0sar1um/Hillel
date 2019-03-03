@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Linq;
 
 namespace Feb23_Task3
 {
@@ -9,17 +8,33 @@ namespace Feb23_Task3
         {
             while (true)
             {
+                Console.Clear();
+                
                 Console.Write("Input ticket number: ");
                 var ticketNumber = Console.ReadLine();
-                
-                if (ticketNumber == null || (ticketNumber.Length <6 || ticketNumber.Length > 6))
+
+                try
                 {
-                    Console.WriteLine("Ticket number must include 6 digits!");
+                    Convert.ToInt32(ticketNumber);
+                }
+                catch (Exception exception)
+                {
+                    Console.Write(exception.Message);
+                    Console.ReadLine();
+                    continue;
+                }
+                
+                if (ticketNumber == null || (ticketNumber.Length != 6))
+                {
+                    Console.Write("Ticket number must include 6 digits!");
+                    Console.ReadLine();
                     continue;
                 }
 
-                var leftPart = int.Parse(ticketNumber?.Substring(0, ticketNumber.Length / 2));
-                var rightPart = int.Parse(ticketNumber?.Substring((ticketNumber.Length) / 2, ticketNumber.Length -3));
+                var leftPart = int.Parse(ticketNumber?.Substring(
+                    0, ticketNumber.Length / 2));
+                var rightPart = int.Parse(ticketNumber?.Substring(
+                    (ticketNumber.Length) / 2, ticketNumber.Length -3));
 
                 Console.WriteLine(IsHappy(leftPart) == IsHappy(rightPart)
                     ? "You have a happy ticket!"
