@@ -24,7 +24,7 @@ namespace Feb23_Task3
                     continue;
                 }
                 
-                if (ticketNumber == null || (ticketNumber.Length != 6))
+                if (ticketNumber.Length != 6)
                 {
                     Console.Write("Ticket number must include 6 digits!");
                     Console.ReadLine();
