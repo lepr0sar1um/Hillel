@@ -25,7 +25,7 @@ namespace Feb23_Task5
 
         private static int Result(int value)
         {
-            return value = (value / 100) * 10 + (value - (value  / 10 ) * 10) + (value / 10 - value / 100 * 10) *100;
+            return (value / 100) * 10 + (value - (value  / 10 ) * 10) + (value / 10 - value / 100 * 10) *100;
         }
     }
 }
