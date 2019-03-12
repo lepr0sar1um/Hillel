@@ -4,19 +4,19 @@ namespace March2_Task5
     {
         public double ProcessValue(double value)
         {
-            if (value > 0)
+            if (value != 0)
             {
-                return value + 1;
+                if (value > 0)
+                {
+                    return value + 1;
+                }
+
+                if (value < 0)
+                {
+                    return value - 2;
+                }
             }
-            if (value < 0)
-            {
-                return value - 2;
-            }
-            if (value.Equals(0))
-            {
-                return value = 10;
-            }
-            return value;
+            return value = 10;
         }
     }
 } 
