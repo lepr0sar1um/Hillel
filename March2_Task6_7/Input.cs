@@ -20,8 +20,7 @@ namespace March2_Task6
             
                 for (int i = 0; i < inputValues?.Length; i++)
                 {
-                    int number;
-                    var isNumber = int.TryParse(inputValues[i], out number);
+                    var isNumber = int.TryParse(inputValues[i], out var number);
                 
                     if(isNumber) 
                     {
