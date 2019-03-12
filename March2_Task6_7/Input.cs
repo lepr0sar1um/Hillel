@@ -18,7 +18,7 @@ namespace March2_Task6
                 var inputValues = Console.ReadLine()?.Split(new[] { ' ', '\n', '\t', '.', ',' }, 
                     StringSplitOptions.RemoveEmptyEntries);
             
-                for (int i = 0; i < inputValues?.Length; i++)
+                for (var i = 0; i < inputValues?.Length; i++)
                 {
                     var isNumber = int.TryParse(inputValues[i], out var number);
                 
@@ -34,12 +34,6 @@ namespace March2_Task6
                         break;
                     }
                 }
-            }
-                                
-            Console.Write("You have entered: ");
-            foreach (var element in valuesArray)
-            {
-                Console.Write("{0} ", element);
             }
             
             process.FindCounter(valuesArray);
