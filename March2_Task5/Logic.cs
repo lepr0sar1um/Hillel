@@ -1,10 +1,12 @@
+using System;
+
 namespace March2_Task5
 {
     public class Logic
     {
         public double ProcessValue(double value)
         {
-            if (value != 0)
+            if (!value.Equals(0))
             {
                 if (value > 0)
                 {
