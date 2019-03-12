@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace March2_Task5
+﻿namespace March2_Task5
 {
     class Program
     {
