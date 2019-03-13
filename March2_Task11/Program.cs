@@ -30,7 +30,7 @@ namespace March2_Task11
                 while (step > -2 && step < 2)
                 {
 
-                    Console.WriteLine("\nPlease, input digital command for the Robot, " +
+                    Console.WriteLine("Please, input digital command for the Robot, " +
                                       "like -1 to move right, " +
                                       "1 to move left, " +
                                       "0 to move forward\n" +
