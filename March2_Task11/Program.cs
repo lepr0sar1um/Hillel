@@ -21,7 +21,7 @@ namespace March2_Task11
                 if (!(direction.Equals('w') || direction.Equals('e') ||
                     direction.Equals('s') || direction.Equals('n')))
                 {
-                    Console.WriteLine("\nPlease, use w, e, n, s only!\n" +
+                    Console.WriteLine("Please, use w, e, n, s only!\n" +
                                       "Press any key to continue...");
                     Console.ReadLine();
                     continue;
@@ -31,9 +31,10 @@ namespace March2_Task11
                 {
 
                     Console.WriteLine("\nPlease, input digital command for the Robot, " +
-                                      "where -1 => move right, " +
-                                      "1 => move left, " +
-                                      "and 0 => move forward");
+                                      "like -1 to move right, " +
+                                      "1 to move left, " +
+                                      "0 to move forward\n" +
+                                      "or any another digit to exit");
 
                     try
                     {
@@ -41,7 +42,9 @@ namespace March2_Task11
                     }
                     catch (Exception)
                     {
-                        Console.WriteLine("You have entered incorrect command");
+                        Console.WriteLine("You have entered incorrect command!\n" +
+                                          "Press any key to continue...");
+                        Console.ReadLine();
                         continue;
                     }
 
@@ -82,6 +85,7 @@ namespace March2_Task11
                                 break;
                         }
                     }
+                    
                     finalDirection += direction;
                 }
                 break;
